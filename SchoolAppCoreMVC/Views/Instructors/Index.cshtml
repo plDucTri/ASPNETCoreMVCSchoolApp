@@ -1,7 +1,7 @@
-@model IEnumerable<SchoolAppCoreMVC.Models.SchoolAppCoreMVC.Models.Instructor>
+@model IEnumerable<SchoolAppCoreMVC.Models.Instructor>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Instructor";
 }
 
 <h1>Index</h1>
@@ -13,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                @Html.DisplayNameFor(model => model.FirstName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.HireDate)
@@ -28,10 +28,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(model => item.FirstName)
+                @Html.DisplayFor(model => item.LastName)
             </td>
             <td>
-                @Html.DisplayFor(model => item.LastName)
+                @Html.DisplayFor(model => item.FirstName)
             </td>
             <td>
                 @Html.DisplayFor(model => item.HireDate)

@@ -1,0 +1,18 @@
+stages:
+- build
+- deploy
+
+build:
+stage: build
+script:
+- docker build -t plductri/myaspnetcoreapp:latest .
+- docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
+- docker push plductri/myaspnetcoreapp:latest
+
+deploy:
+stage: deploy
+script:
+
+
+- docker pull plductri/myaspnetcoreapp:latest
+- docker run -d -p 8080:80 --name myaspnetcoreappcontainer plductri/myaspnetcoreapp:latest

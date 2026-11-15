@@ -1,7 +1,7 @@
 @model IEnumerable<SchoolAppCoreMVC.Models.Course>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Course";
 }
 
 <h1>Index</h1>
@@ -21,6 +21,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.DepartmentID)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Enrollments)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,6 +41,12 @@
             </td>
             <td>
                 @Html.DisplayFor(model => item.DepartmentID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Department)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Enrollments)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.CourseID">Edit</a> |

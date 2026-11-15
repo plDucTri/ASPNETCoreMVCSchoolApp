@@ -47,7 +47,7 @@ public class EnrollmentsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("EnrollmentID,CourseID,StudentID,Grade")] Enrollment enrollment)
+    public async Task<IActionResult> Create([Bind("EnrollmentID,CourseID,StudentID,Grade,Course,Student")] Enrollment enrollment)
     {
         if (ModelState.IsValid)
         {
@@ -79,7 +79,7 @@ public class EnrollmentsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int? enrollmentid, [Bind("EnrollmentID,CourseID,StudentID,Grade")] Enrollment enrollment)
+    public async Task<IActionResult> Edit(int? enrollmentid, [Bind("EnrollmentID,CourseID,StudentID,Grade,Course,Student")] Enrollment enrollment)
     {
         if (enrollmentid != enrollment.EnrollmentID)
         {

@@ -47,7 +47,7 @@ public class DepartmentsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("DepartmentID,Name,Budget,StartDate")] Department department)
+    public async Task<IActionResult> Create([Bind("DepartmentID,DepartmentName,Budget,StartDate,Courses")] Department department)
     {
         if (ModelState.IsValid)
         {
@@ -79,7 +79,7 @@ public class DepartmentsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int? departmentid, [Bind("DepartmentID,Name,Budget,StartDate")] Department department)
+    public async Task<IActionResult> Edit(int? departmentid, [Bind("DepartmentID,DepartmentName,Budget,StartDate,Courses")] Department department)
     {
         if (departmentid != department.DepartmentID)
         {

@@ -1,7 +1,6 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SchoolAppCoreMVC.Models.SchoolAppCoreMVC.Models;
 using SchoolAppCoreMVC.Models;
 
 public class InstructorsController : Controller
@@ -48,7 +47,7 @@ public class InstructorsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("InstructorID,FirstName,LastName,HireDate")] Instructor instructor)
+    public async Task<IActionResult> Create([Bind("InstructorID,LastName,FirstName,HireDate")] Instructor instructor)
     {
         if (ModelState.IsValid)
         {
@@ -80,7 +79,7 @@ public class InstructorsController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int? instructorid, [Bind("InstructorID,FirstName,LastName,HireDate")] Instructor instructor)
+    public async Task<IActionResult> Edit(int? instructorid, [Bind("InstructorID,LastName,FirstName,HireDate")] Instructor instructor)
     {
         if (instructorid != instructor.InstructorID)
         {
